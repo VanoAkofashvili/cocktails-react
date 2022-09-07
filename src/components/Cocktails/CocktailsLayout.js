@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
-function CocktailsPage() {
+function CocktailsLayout({ children }) {
   const [isAlcoholic, setIsAlcoholic] = useState(true);
 
   return (
@@ -10,9 +9,9 @@ function CocktailsPage() {
       <div className={"w-96 flex-shrink-0 bg-blue-300"}>
         <Sidebar isAlcoholic={isAlcoholic} setIsAlcoholic={setIsAlcoholic} />
       </div>
-      <Outlet />
+      {children}
     </div>
   );
 }
 
-export default CocktailsPage;
+export default CocktailsLayout;

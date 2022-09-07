@@ -1,3 +1,5 @@
+import "./Button.module.css";
+
 function Button({ children, isActive, ...rest }) {
   return (
     <button
